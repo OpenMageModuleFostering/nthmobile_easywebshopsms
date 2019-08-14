@@ -1,0 +1,19 @@
+<?php
+
+/** @var NthMobile_EasyWebShopSMS_Block_Adminhtml_System_Config_Log_Reset $this */
+?>
+<script type="text/javascript">
+    //<![CDATA[
+    function resetLogFile() {
+        new Ajax.Request('<?php echo $this->getAjaxCheckUrl() ?>', {
+            method:     'get',
+            onSuccess: function(transport){
+                document.getElementById("row_easywebshopsms_sms_log_log_info").innerHTML = transport.responseText;
+            }
+        });
+    }
+    //]]>
+</script>
+
+<?php echo $this->getButtonHtml() ?>
+

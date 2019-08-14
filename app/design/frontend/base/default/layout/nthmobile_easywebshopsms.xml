@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * Global Layout Overrides to add custom structure blocks to layout template files
+ *
+ * @category
+ * @package
+ * @copyright
+ * @license
+ */
+-->
+<layout>
+
+    <default>
+            <block type="core/text_list" name="easywebshopsms.customer.fields" />
+
+    </default>
+    <customer_account_create>
+        <reference name="easywebshopsms.customer.fields">
+            <block type="customer/form_register" name="easywebshopsms_form_register" template="nthmobile/easywebshopsms/form/register.phtml"/>
+        </reference>
+    </customer_account_create>
+
+    <customer_account_edit>
+        <reference name="easywebshopsms.customer.fields">
+            <!-- <remove name="customer_edit" /> -->
+            <block type="customer/form_edit"   name="easywebshopsms_form_edit" template="nthmobile/easywebshopsms/form/edit.phtml"/>
+        </reference>
+    </customer_account_edit>
+
+    <checkout_onepage_review>
+        <reference name="checkout.onepage.review.info.items.after">
+            <block type="checkout/onepage_review" name="easywebshopsms.checkout.onepage.review.info" template="nthmobile/easywebshopsms/onepage/info/mobile_number.phtml" />
+        </reference>
+    </checkout_onepage_review>
+
+
+
+</layout>

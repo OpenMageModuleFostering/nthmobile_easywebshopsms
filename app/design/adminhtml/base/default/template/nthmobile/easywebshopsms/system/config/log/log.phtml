@@ -1,0 +1,71 @@
+<?php
+
+/** @var NthMobile_EasyWebShopSMS_Block_Adminhtml_System_Config_Log_Log $this */
+?>
+<style>
+    #row_easywebshopsms_sms_log_log_info {
+        margin-bottom: 10px;
+    }
+    #row_easywebshopsms_sms_log_log_info ul {
+        display: block;
+        width: 97%;
+    }
+
+    #row_easywebshopsms_sms_log_log_info ul li{
+        border: 1px solid rgba(0,0,0,0.1);
+        margin-bottom: 1px;
+    }
+    #row_easywebshopsms_sms_log_log_info ul li:hover{
+        background: rgba(155,155,155,0.1);
+    }
+    #row_easywebshopsms_sms_log_log_info ul li .details {
+        float: left;
+        width: 30%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    #row_easywebshopsms_sms_log_log_info ul li .details-message {
+        float: left;
+        width: 70%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+</style>
+<div id="row_easywebshopsms_sms_log_log_info" style="max-height: 400px; overflow: auto; padding-bottom: 20px;">
+    <?php
+
+                $logFile = $this->getLogFile();
+                if (file_exists($logFile)) {
+                    $lines = explode("__EOL__", file_get_contents($logFile));
+                    $formatedText = "";
+                    echo "<ul>";
+                    $lines = array_reverse($lines, true);
+                    foreach($lines as $line) {
+                        if(empty($line) or strlen($line) < 10) continue;
+                        $formatedText = "";
+                        $ctx = explode("__CTX__",$line);
+                        if(isset($ctx[1])) {
+                            $data = json_decode($ctx[1], true);
+
+                            if($data != null and isset($data['event_name'])) {
+                                $formatedText .= "<div class='details'>";
+                                $formatedText .= "<p><b>From:</b> ". @$data['sms_origin']."<br/><b>To:</b> ". @$data['mobile_number']."<br/><b>Time:</b> ". ((isset($data['time'])) ? date('Y-m-d H:i:s',$data['time']) : "") ."<br/><b>Event:</b> ". @$data['event_name']."<br/></p>";
+                                $formatedText .= "</div>";
+                                $formatedText .= "<div class='details-message'>";
+                                $formatedText .= nl2br(trim(@$data['message_text'], "\n \r"));
+                                $formatedText .= "</div>";
+                            }
+                        }
+                        if(empty($formatedText)) {
+                            $formatedText = nl2br(trim($line, "\n \r"));
+                        }
+                        echo "<li>".$formatedText. "</li>";
+                    }
+                    echo "</ul>";
+                } else {
+                    echo "LOG file $logFile does not exist!";
+                }
+    ?>
+</div>
+

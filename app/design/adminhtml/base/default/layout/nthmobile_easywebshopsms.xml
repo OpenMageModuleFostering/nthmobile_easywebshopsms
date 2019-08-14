@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.1" >
+
+    <easywebshopsms_adminhtml_easywebshopsmslogs_index>
+        <reference name="content">
+            <block type="easywebshopsms/adminhtml_easywebshopsmslogs" name="easywebshopsms_logs" />
+        </reference>
+    </easywebshopsms_adminhtml_easywebshopsmslogs_index>
+
+    <easywebshopsms_adminhtml_easywebshopsmsabandonedcarts_index>
+        <reference name="content">
+            <block type="easywebshopsms/adminhtml_easywebshopsmsabandonedcarts" name="easywebshopsms_abandonedcarts" />
+        </reference>
+    </easywebshopsms_adminhtml_easywebshopsmsabandonedcarts_index>
+    <easywebshopsms_adminhtml_easywebshopsmssaleabandonedcarts_index>
+        <reference name="content">
+            <block type="easywebshopsms/adminhtml_easywebshopsmssaleabandonedcarts" name="easywebshopsms_saleabandonedcarts" />
+        </reference>
+    </easywebshopsms_adminhtml_easywebshopsmssaleabandonedcarts_index>
+</layout>

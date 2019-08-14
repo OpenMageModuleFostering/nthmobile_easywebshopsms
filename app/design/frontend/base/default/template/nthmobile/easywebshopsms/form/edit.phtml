@@ -1,0 +1,8 @@
+
+            <li>
+                <label for="mobile_number" class="required"><em>*</em><?php echo $this->__('Mobile Number') ?></label>
+                <div class="input-box">
+                    <input type="mobile_number" autocapitalize="off" autocorrect="off" spellcheck="false" name="mobile_number" id="mobile_number" value="<?php echo $this->escapeHtml($this->getCustomer()->getMobileNumber()) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Mobile Number')) ?>" class="input-text required-entry" />
+                </div>
+            </li>
+

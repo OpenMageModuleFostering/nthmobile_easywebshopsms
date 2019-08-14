@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package>
+    <name>NthMobile_EasyWebShopSMS</name>
+    <version>1.0.1</version>
+    <stability>stable</stability>
+    <license uri="https://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Use EasyWebShop SMS to send different SMS alerts from your web shop to your customers. If you have to send event-dependent notifications or create SMS marketing campaigns, EasyWebShop SMS is the right solution for you.&#xD;
+&#xD;
+EasyWebShop SMS is a plugin based on SMS API technology.</summary>
+    <description>Use EasyWebShop SMS to send different SMS alerts from your web shop to your customers. If you have to send event-dependent notifications or create SMS marketing campaigns, EasyWebShop SMS is the right solution for you.&#xD;
+&#xD;
+EasyWebShop SMS is a plugin based on SMS API technology.&#xD;
+&#xD;
+&#xD;
+Benefits&#xD;
+&#xD;
+Wish A Warm Welcome. Send your customers a confirmatory SMS after they have successfully registered with your web shop.&#xD;
+&#xD;
+Say Thank You. Thank customers for choosing your product by sending a thank-you SMS after the first purchase.&#xD;
+&#xD;
+Schedule your campaigns for later. Send your SMS campaigns or alerts immediately, or optimize it by scheduling delivery later.&#xD;
+&#xD;
+Engage Customers. Send SMS reminders of unfinished purchases and take them to checkout to complete their purchase.&#xD;
+&#xD;
+Personalize offers. Inform customers of attractive discounts and special offers or notify them when their wish list item goes on sale.&#xD;
+&#xD;
+Offer Incentives. Stimulate customers who need extra incentive to purchase your goods/service by sending SMS notifications with special offers.&#xD;
+&#xD;
+Demonstrate Reliability. Reassure your customers by sending order-confirmation SMS following a purchase.</description>
+    <notes>First release</notes>
+    <authors><author><name>NTH</name><user>NTH_mobile</user><email>goran.kelekovic@nth.ch</email></author></authors>
+    <date>2016-11-09</date>
+    <time>09:20:39</time>
+    <contents><target name="magecommunity"><dir name="NthMobile"><dir name="EasyWebShopSMS"><dir name="Block"><dir name="Adminhtml"><file name="Easywebshopsmsabandonedcarts.php" hash="93afd65912b9050102b07903dbd81bf6"/><file name="Easywebshopsmslogs.php" hash="fe135abf217da7594d37c24ed5f6174e"/><file name="Easywebshopsmssaleabandonedcarts.php" hash="1d0139381065ffce6672a4062c4dbb76"/><dir name="Easywebshopsmsabandonedcarts"><file name="Grid.php" hash="3030fb87758bf749a0723f998d0e8e8d"/></dir><dir name="Easywebshopsmslogs"><file name="Grid.php" hash="1bf6bb6def9597a32e6064fe8ba739ce"/></dir><dir name="Easywebshopsmssaleabandonedcarts"><file name="Grid.php" hash="4f70df0868fc4f41f90d92d9419aa37b"/></dir><dir name="System"><dir name="Config"><dir name="Log"><file name="Log.php" hash="a6f9d978d6cefa89f41f6a12bb6bb6cd"/><file name="Reset.php" hash="be5bfc23fb06f6c660131fbb29de44ac"/></dir><dir name="Section"><file name="Details.php" hash="c8d286f3a36fafc4c51407309159d19e"/></dir></dir></dir></dir></dir><dir name="controllers"><file name="ApiController.php" hash="bbb6942283e5adf12960b01468d2dd22"/><file name="TestController.php" hash="529dbe7a2564c89a214e2d0ca2e7164f"/><dir name="Adminhtml"><file name="EasywebshopsmsabandonedcartsController.php" hash="482e13ed2982930ff9acfb8df1bfb8dc"/><file name="EasywebshopsmslogsController.php" hash="3dcbf2facafd750c3bce9c0fb7a4a58b"/><file name="EasywebshopsmssaleabandonedcartsController.php" hash="7585967c6ab393cf380875ea08deabff"/></dir></dir><dir name="etc"><file name="config.xml" hash="4ca9a6ca5ce9341e364d92380e8a25a8"/><file name="system.xml" hash="766eb9156b0c3e0d4a2a67436fdc73d0"/></dir><dir name="Helper"><file name="Data.php" hash="1651c680029f3c6f7835190a7b555030"/></dir><dir name="Model"><file name="Bulkclient.php" hash="1d85f637a51f28c15616dfdcda16c365"/><file name="Config.php" hash="dbae3de50b2791649ccedcec8b3a1679"/><file name="Easywebshopsms.php" hash="5bd694fc8e157258c74e36033fb68f69"/><file name="Notifier.php" hash="8ba3733c60e4dd97b658cdf314d533ea"/><file name="Observer.php" hash="c9f7275760790f4db51c3043531f2b5a"/><dir name="Abandonedcart"><file name="Collection.php" hash="fe36d3064c1f6181c568187603291d92"/></dir><dir name="Logger"><file name="Factory.php" hash="6c4a88e693eb477d503c25965f47ff1c"/><file name="Logger.php" hash="ee1e0f2f0e2e3d823e2a90a8f2998919"/></dir><dir name="Resource"><file name="Easywebshopsms.php" hash="2238b1766a327d615401051cb0ea1e63"/><file name="Setup.php" hash="ace669f97ae7e870f0f1ecba672a6f87"/><dir name="Easywebshopsms"><file name="Collection.php" hash="00d2ead3b11fbdf96564ef93d25c5443"/></dir></dir><dir name="Resources"><file name="Setup.php" hash="f48ef8fe62d2c4e27b1a176a3cf091d4"/></dir></dir><dir name="sql"><dir name="easywebshopsms_customer"><file name="install-1.0.0.php" hash="87eec8a5b82a16a1be68616a13b2485f"/></dir><dir name="NthMobile_EasyWebShopSMS_setup"><file name="install-1.0.0.php" hash="de974cdde4ffd3e294c6adf3d00c7f75"/><file name="upgrade-1.0.0-1.0.1.php" hash="0a22178fa01cfbfeaf5ee8810998a86a"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="base"><dir name="default"><dir name="layout"><file name="nthmobile_easywebshopsms.xml" hash="fcfeeedeb773571ed732604793c9c329"/></dir><dir name="template"><dir name="nthmobile"><dir name="easywebshopsms"><dir name="abandonedcarts"><file name="list.phtml" hash="3fa7a086416234088d00fe5469fbec78"/></dir><dir name="system"><dir name="config"><dir name="log"><file name="log.phtml" hash="6ff536fa709de013740e7a0edeb48aa8"/><file name="reset.phtml" hash="ea703b9b01d881fb8cd61aabee989382"/></dir><dir name="section"><file name="details.phtml" hash="12b5f94424cb16729ccae4ffc05e389e"/></dir></dir></dir></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="nthmobile_easywebshopsms.xml" hash="069c5f21bead66fa83e0c1c50ed3fd63"/></dir><dir name="template"><dir name="nthmobile"><dir name="easywebshopsms"><dir name="form"><file name="edit.phtml" hash="f6836dfaf76128eef25a97cf072cc050"/><file name="register.phtml" hash="68b537cc3b3645753c2cf1c803f6b44c"/></dir><dir name="onepage"><dir name="info"><file name="mobile_number.phtml" hash="363f3982d0a5acba1092a335becdfdd1"/></dir></dir></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="NthMobile_EasyWebShopSMS.xml" hash="385d41dde78f41839fa4fa4741a26418"/></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="base"><dir name="default"><dir name="images"><dir name="nthmobile"><dir name="easywebshopsms"><file name="logo.jpg" hash="1bca4624f77292f5ffea14002c14d36a"/></dir></dir></dir><dir name="js"><dir name="nthmobile"><dir name="easywebshopsms"><file name="smscounter.js" hash="ca32dbf291f172d1798baddbd1f67156"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.4.1</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,43 @@
+<?php
+
+/** @var NthMobile_EasyWebShopSMS_Block_Adminhtml_System_Config_Section_Details $this */
+
+$helper = Mage::helper('easywebshopsms');
+?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/nthmobile/easywebshopsms/smscounter.js'); ?>" ></script>
+<div class="easywebshopsms_container" style="display: block">
+    <table>
+        <tr>
+            <td>
+                <img width="350px" src="<?php echo $this->getSkinUrl('images/nthmobile/easywebshopsms/logo.jpg'); ?>" alt="NTH Mobile - EasyWebShop SMS" />
+            </td>
+            <td style="padding-left: 25px;">
+                <p>Use EasyWebShop SMS to send different SMS alerts from your web shop to your customers. If you have to send event-dependent notifications or create SMS marketing campaigns, EasyWebShop SMS is the right solution for you.</p>
+                <p>EasyWebShop SMS is a plugin based on SMS API technology.</p>
+                <br/>
+
+                <h4>Benefits</h4>
+                <p><b>Wish A Warm Welcome.</b> Send your customers a confirmatory SMS after they have successfully registered with your web shop.</p>
+                <p><b>Say Thank You.</b>  Thank customers for choosing your product by sending a thank-you SMS after the first purchase.</p>
+                <p><b>Schedule your campaigns for later.</b>  Send your SMS campaigns or alerts immediately, or optimize it by scheduling delivery later.</p>
+                <p><b>Engage Customers.</b>  Send SMS reminders of unfinished purchases and take them to checkout to complete their purchase.</p>
+                <p><b>Personalize offers.</b>  Inform customers of attractive discounts and special offers or notify them when their wish list item goes on sale.</p>
+                <p><b>Offer Incentives.</b>  Stimulate customers who need extra incentive to purchase your goods/service by sending SMS notifications with special offers.</p>
+                <p><b>Demonstrate Reliability.</b>  Reassure your customers by sending order-confirmation SMS following a purchase.</p>
+                <br/>
+                <p>What is the price and how do I get started?</p>
+                <p><?php echo
+                $helper->__(
+                    "Click %shere%s to find out both!",
+                    '<a target="_blank" href="' . $this->getSupportLink() . '">',
+                    '</a>'
+                );
+                ?></p>
+
+
+            </td>
+        </tr>
+
+    </table>
+
+</div>

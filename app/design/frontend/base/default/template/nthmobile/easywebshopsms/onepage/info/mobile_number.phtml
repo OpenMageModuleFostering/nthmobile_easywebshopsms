@@ -1,0 +1,11 @@
+<?php if ($this->isCustomerLoggedIn()) :
+    echo "<br/>";
+    if ($this->getCustomer()->getMobileNumber() == ''){ ?>
+        <label for="mobile_number"><em>*</em> <?php echo $this->__('Want receive SMS notifications?'); ?></label>
+        <a href="<?php echo $this->getUrl('customer/account/edit'); ?>"><?php echo $this->__('Enter mobile number here.'); ?></a>
+    <?php } else if ($this->getCustomer()->getMobileNumber() != '') { ?>
+        <label for="mobile_number"><em>*</em> <?php echo $this->__('SMS notifications will be sent to: %s', $this->getCustomer()->getMobileNumber()); ?></label>
+        <a href="<?php echo $this->getUrl('customer/account/edit'); ?>"><?php echo $this->__('Change'); ?></a>
+    <?php } ?>
+
+<?php endif; ?>
