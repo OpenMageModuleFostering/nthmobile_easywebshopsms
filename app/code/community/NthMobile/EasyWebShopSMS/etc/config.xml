@@ -127,6 +127,7 @@
             </NthMobile_EasyWebShopSMS_read>
         </resources>
     </global>
+
     <admin>
         <routers>
             <easywebshopsms>
@@ -194,4 +195,36 @@
             </resources>
         </acl>
     </adminhtml>
+
+    <default>
+        <easywebshopsms>
+            <api_connection>
+                <active>0</active>
+                <debug_mode>0</debug_mode>
+                <dry_run>0</dry_run>
+            </api_connection>
+            <abandoned_notifications>
+                <notify_delay>20</notify_delay>
+                <auto_notify_enable>0</auto_notify_enable>
+                <auto_notify_cron_expr>0 9 * * *</auto_notify_cron_expr>
+                <auto_notify_all>1</auto_notify_all>
+            </abandoned_notifications>
+        </easywebshopsms>
+    </default>
+
+    <crontab>
+        <jobs>
+            <easywebshopsms_abandonedcarts_send>
+                <run>
+                    <model>easywebshopsms/notifier::sendAbandonedCartsCron</model>
+                </run>
+            </easywebshopsms_abandonedcarts_send>
+            <easywebshopsms_abandonedcarts_sendsale>
+                <run>
+                    <model>easywebshopsms/notifier::sendAbandonedCartsSaleCron</model>
+                </run>
+            </easywebshopsms_abandonedcarts_sendsale>
+
+        </jobs>
+    </crontab>
 </config>

@@ -284,7 +284,7 @@ class NthMobile_EasyWebShopSMS_Model_Notifier extends Mage_Core_Model_Abstract
 					if(!$this->getConfig()->getDryRun()) {
 						$quote->setEasywebshopsmsAbandonedSaleNotified(1);
 
-						$quote->getResource()->saveAttribute($quote,array('easywebshopsms_abandoned_sale_notified'));
+						$quote->save();
 					}
 				}
 
@@ -328,9 +328,9 @@ class NthMobile_EasyWebShopSMS_Model_Notifier extends Mage_Core_Model_Abstract
 			if($helper->registerEvent($helper->prepareEventData("AbandonedCartEvent", $eventData), $text)){
 				// We change the notification attribute
 				if(!$this->getConfig()->getDryRun()) {
-					$quote->setEasywebshopsmsAbandonedSaleNotified(1);
+					$quote->setEasywebshopsmsAbandonedNotified(1);
 
-					$quote->getResource()->saveAttribute($quote, array('easywebshopsms_abandoned_notified'));
+					$quote->save();
 				}
 			}
 		}
@@ -461,6 +461,35 @@ class NthMobile_EasyWebShopSMS_Model_Notifier extends Mage_Core_Model_Abstract
 			Mage::helper('easywebshopsms')->log(sprintf("%s->Error: %s", __METHOD__, $e->getMessage()));
 			return 0;
 		}
+	}
+
+
+	/**
+	 * Send notification cron
+	 */
+	public function sendAbandonedCartsCron(Mage_Cron_Model_Schedule $schedule = null)
+	{
+		if(!$this->getConfig()->isAutoNotifyEnabled()) {
+			return;
+		}
+		if($this->getConfig()->isAutoNotifyAbandoned()) {
+			$this->sendAbandonedCartsSMS();
+		}
+
+	}
+
+	/**
+	 * Send notification cron
+	 */
+	public function sendAbandonedCartsSaleCron(Mage_Cron_Model_Schedule $schedule = null)
+	{
+		if(!$this->getConfig()->isAutoNotifyEnabled()) {
+			return;
+		}
+		if($this->getConfig()->isAutoNotifySale()) {
+			$this->sendAbandonedCartsSaleSMS();
+		}
+
 	}
 
 	/**

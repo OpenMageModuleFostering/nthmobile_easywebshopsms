@@ -12,7 +12,7 @@ class NthMobile_EasyWebShopSMS_Block_Adminhtml_Easywebshopsmsabandonedcarts exte
     {
         $this->_controller = 'adminhtml_easywebshopsmsabandonedcarts';
         $this->_blockGroup = 'easywebshopsms';
-        $this->_headerText = Mage::helper('easywebshopsms')->__('Abandoned Carts (Applied delay: %s days)', Mage::getStoreConfig('abandonedcartsconfig/options/notify_delay'));
+        $this->_headerText = Mage::helper('easywebshopsms')->__('Abandoned Carts (Applied delay: %s days)', Mage::getStoreConfig('easywebshopsms/abandoned_notifications/notify_delay'));
         parent::__construct();
         $this->_removeButton('add');
         $this->_addButton('notify', array(

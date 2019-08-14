@@ -68,28 +68,29 @@ class NthMobile_EasyWebShopSMS_Helper_Data extends Mage_Core_Helper_Abstract
             if ($response->isOk()) {
 
                 $textMessage = $response->resource();
+                if(!empty($textMessage)) {
+                    $inputData   = [
+                        'customer_id'    => $customerData->getId(),
+                        'event_name'     => $data['event'],
+                        'log_time'       => Mage::getModel('core/date')->date('Y-m-d H:i:s'),
+                        'sms_origin'     => $origin,
+                        'mobile_number'  => $msisdn,
+                        'message_text'   => $text,
+                        'sms_status_code'=> $textMessage->smsId()
+                    ];
 
-                $inputData   = [
-                    'customer_id'    => $customerData->getId(),
-                    'event_name'     => $data['event'],
-                    'log_time'       => Mage::getModel('core/date')->date('Y-m-d H:i:s'),
-                    'sms_origin'     => $origin,
-                    'mobile_number'  => $msisdn,
-                    'message_text'   => $text,
-                    'sms_status_code'=> $textMessage->smsId()
-                ];
+                    /*
+                     *sms_sent = integer (0 || 1)
+                     * sms_status_code = integer(Gatewway status code)
+                     * sms_status_message = string (200)
+                     * */
 
-                /*
-                 *sms_sent = integer (0 || 1)
-                 * sms_status_code = integer(Gatewway status code)
-                 * sms_status_message = string (200)
-                 * */
+                    Mage::getModel('easywebshopsms/easywebshopsms')
+                        ->setData($inputData)
+                        ->save();
 
-                Mage::getModel('easywebshopsms/easywebshopsms')
-                    ->setData($inputData)
-                    ->save();
-
-                return true;
+                    return true;
+                }
             } else {
                 $error   = $response->error();
 

@@ -1,0 +1,28 @@
+{
+    "name": "nth-mobile/easywebshop-sms",
+    "homepage": "http://www.nth-mobile.com/",
+    "description": "Magento integration for EasyWebShop SMS",
+    "keywords": ["magento", "mobile", "payment", "sms", "notifications"],
+    "type": "magento-module",
+    "authors": [
+        {
+            "name":"NTH Mobile",
+            "email":"info@nth.ch"
+        }
+    ],
+    "require"     : {
+        "php": ">=5.4.0",
+        "samurai/bulksms-client"                : "dev-develop"
+    },
+    "repositories": [
+        { "type": "composer",  "url": "https://packages.firegento.com" },
+        { "type": "composer",  "url" : "http://packagist.nth.ch" }
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "secure-http": false
+    },
+
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

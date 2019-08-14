@@ -13,6 +13,18 @@ class NthMobile_EasyWebShopSMS_Model_Observer
             self::$lastExecutionTime = time();
     }
 
+    public function autoload()
+    {
+
+        if(class_exists('\Samurai\BulkSms\Client', false)) {
+            return;
+        }
+        if(file_exists(__DIR__ . '/../lib/vendor/autoload.php')) {
+
+            require_once(__DIR__ . '/../lib/vendor/autoload.php');
+        }
+    }
+
     /**
      * @return NthMobile_EasyWebShopSMS_Model_Config
      */
@@ -108,6 +120,8 @@ class NthMobile_EasyWebShopSMS_Model_Observer
 
     public function hookToCustomerLogin(Varien_Event_Observer $observer)
     {
+        if (time()-self::$lastExecutionTime<=$this->skipMultipleSendSmsPeriod)
+            return;
         $eventConfig = "event_customer_login";
 
         $event = $observer->getEvent();
@@ -116,11 +130,14 @@ class NthMobile_EasyWebShopSMS_Model_Observer
             $text = $this->getConfig()->getEventMessageTemplate($eventConfig);
             $helper = $this->getHelper();
             $helper->registerEvent($helper->prepareEventData("CustomerLogin",$event->getData()),$text);
+            self::$lastExecutionTime = time();
         }
     }
 
     public function hookToCustomerLogout(Varien_Event_Observer $observer)
     {
+        if (time()-self::$lastExecutionTime<=$this->skipMultipleSendSmsPeriod)
+            return;
         $eventConfig = "event_customer_logout";
         $event = $observer->getEvent();
         if($this->getConfig()->isEventActive($eventConfig))
@@ -128,11 +145,14 @@ class NthMobile_EasyWebShopSMS_Model_Observer
             $text = $this->getConfig()->getEventMessageTemplate($eventConfig);
             $helper = $this->getHelper();
             $helper->registerEvent($helper->prepareEventData("CustomerLogout",$event->getData()),$text);
+            self::$lastExecutionTime = time();
         }
     }
 
     public function hookToCustomerRegisterSuccess(Varien_Event_Observer $observer)
     {
+        if (time()-self::$lastExecutionTime<=$this->skipMultipleSendSmsPeriod)
+            return;
         $eventConfig = "event_customer_register";
 
         $event = $observer->getEvent()->getData();
@@ -143,6 +163,7 @@ class NthMobile_EasyWebShopSMS_Model_Observer
             $helper = $this->getHelper();
 
             $helper->registerEvent($helper->prepareEventData("CustomerRegisterSuccess", $event),$text);
+            self::$lastExecutionTime = time();
         }
     }
 

@@ -113,10 +113,11 @@
                             <frontend_type>select</frontend_type>
                             <sort_order>92</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                         </dry_run>
+
                     </fields>
                 </api_connection>
                 <message_configuration translate="label">
@@ -456,7 +457,7 @@
                         <notify_delay translate="label comment">
                             <label>Delay / Send Abandoned Cart SMS After</label>
                             <frontend_type>text</frontend_type>
-                            <validate>validate-not-negative-number</validate>
+                            <validate>validate-number</validate>
                             <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -473,6 +474,61 @@
                             <show_in_store>1</show_in_store>
                         </customer_groups>
 
+                        <auto_notify_enable translate="label">
+                            <label>Auto notify</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </auto_notify_enable>
+
+                        <auto_notify_cron_expr translate="label">
+                            <label>Auto notify Cron Schedule</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>NthMobile_EasyWebShopSMS_Block_Adminhtml_System_Config_Backend_Cron</backend_model>
+                            <sort_order>66</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><auto_notify_enable>1</auto_notify_enable></depends>
+                        </auto_notify_cron_expr>
+
+                        <auto_notify_all_abandoned translate="label">
+                            <label>Notify all Abandoned</label>
+                            <comment>Auto notify customers in abandoned cart list</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>67</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <depends><auto_notify_enable>1</auto_notify_enable></depends>
+                        </auto_notify_all_abandoned>
+
+                        <auto_notify_all_sale translate="label">
+                            <label>Notify all Sale Abandoned</label>
+                            <comment>Auto notify customers in sale abandoned cart list</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>67</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <depends><auto_notify_enable>1</auto_notify_enable></depends>
+                        </auto_notify_all_sale>
+<!--
+                        <auto_notify_send_status_email translate="label">
+                            <label>Send email about status. Enter email address</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>68</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><auto_notify_enable>1</auto_notify_enable></depends>
+                        </auto_notify_send_status_email>
+-->
                     </fields>
                 </abandoned_notifications>
 

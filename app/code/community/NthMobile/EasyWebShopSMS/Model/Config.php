@@ -63,6 +63,30 @@ class NthMobile_EasyWebShopSMS_Model_Config
         return "";
     }
 
+    /**
+     * checks if EasyWebShopSMS auto notify Enabled
+     * @return boolean
+     */
+    public function isAutoNotifyEnabled()
+    {
+        return (Mage::getStoreConfig('easywebshopsms/abandoned_notifications/auto_notify_enable')==0) ? false : true;
+    }
+
+    public function isAutoNotifyAbandoned()
+    {
+        return (Mage::getStoreConfig('easywebshopsms/abandoned_notifications/auto_notify_all_abandoned')==0) ? false : true;
+    }
+
+    public function isAutoNotifySale()
+    {
+        return (Mage::getStoreConfig('easywebshopsms/abandoned_notifications/auto_notify_all_sale')==0) ? false : true;
+    }
+
+    public function getAutoNotifySendStatusEmail()
+    {
+        return Mage::getStoreConfig('easywebshopsms/abandoned_notifications/auto_notify_send_status_email');
+    }
+
     private function _resolveConfigGroup($group)
     {
         if(empty($group)) {
