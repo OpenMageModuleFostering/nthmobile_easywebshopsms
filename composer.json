@@ -1,18 +1,5 @@
 {
-    "name": "OpenMageModuleFostering/NthMobile_EasyWebShopSMS",
-    "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
-    "homepage": "",
-    "description": "Use EasyWebShop SMS to send different SMS alerts from your web shop to your customers. If you have to send event-dependent notifications or create SMS marketing campaigns, EasyWebShop SMS is the right solution for you.
-
-EasyWebShop SMS is a plugin based on SMS API technology.",
-    "authors": [
-    {
-        "name": "NTH",
-        "email": "goran.kelekovic@nth.ch"
-    }
-],
-    "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+    "keywords": [
+        "openmage-module"
+    ]
 }
